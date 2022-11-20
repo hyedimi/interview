@@ -510,7 +510,8 @@ iOS(애플)에서 푸시 알림 등 미지원
 
 ## CORS
 
-- Cross-Origin Resource Sharing
+**Cross-Origin Resource Sharing**
+
 - 자신의 도메인과 서로 다른 도메인 간의 리소스를 공유하는 방식
 - 브라우저가 제한하는 SOP(Same-Origin Policy, 동일출처정책) 기준 3개(프로토콜, 도메인, 포트) 중 하나라도 맞지 않으면 리소스 사용이 제한된다.
 - @CrossOrigin 어노테이션을 이용하여 모든 도메인이나 특정 도메인에 허용을 설정할 수 있다.
