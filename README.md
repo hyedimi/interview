@@ -509,8 +509,31 @@ iOS(애플)에서 푸시 알림 등 미지원
 # 🟣 통신
 
 ## CORS
+
+- Cross-Origin Resource Sharing
+- 자신의 도메인과 서로 다른 도메인 간의 리소스를 공유하는 방식
+- 브라우저가 제한하는 SOP(Same-Origin Policy, 동일출처정책) 기준 3개(프로토콜, 도메인, 포트) 중 하나라도 맞지 않으면 리소스 사용이 제한된다.
+- @CrossOrigin 어노테이션을 이용하여 모든 도메인이나 특정 도메인에 허용을 설정할 수 있다.
+   - @CrossOrigin : 모든 도메인 접근 허용
+   - @CrossOrigin(origins = "http://domain1.com, http://domain2.com") : 특정 도메인 허용
+
 ## REST API
+
+**Representational State Transfer**
+
+- 리소스 지향 아키텍쳐
+- 리소스(URI)와 HTTP 메소드(GET, POST, PUT, DELETE)를 이용해 객체화된 서비스에 접근  
+- Client는 HttpURLConnection, HttpClient, OKHttp, Retrofit 등 라이브러리를 이용하여 쉽게 API에 접근할 수 있다.
+
 ## SOAP
+
+**Simple Object Access Protocol**
+
+- 웹 페이지를 통신할 수 있도록 설계된 최초의 표준 형식  
+- XML 기반의 메시지를 컴퓨터 네트워크 상에서 교환하는 프로토콜  
+- 서비스가 있는 공간에 접근하여 자원들을 요청하는 형식  
+- 서비스 지향 아키텍처를 지향함  
+- 서비스 제공자는 WSDL(웹서비스 사용방법 자료. xml)만들고 UDDI에 저장한다. 그리고 허용된 사용자가 원하는 자원을 SOAP 메세지로 요청하고 응답 받는다.  
 
 <br>
 
