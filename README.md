@@ -600,7 +600,7 @@ MSA구축시 수많은 컨테이너가 생성 됨 이 컨테이너를 쿠버네�
 
 🔹 **PaaS**
 
-Platform
+Platform  
 운영체제, 미들웨어, 런타임, DB관리 시스템, API 등의 서비스를 추가로 제공  
 앱의 구축, 테스트, 관리와 업데이트 서비스 제공  
 AWS Elastic Beanstalk, Windows Azure, Heroku, Google App Engine, Apache Stratos  
@@ -620,10 +620,31 @@ Slack, Dropbox, Google G Suite, Salesforce
 # 🟣 운영체제와 시스템
 
 ## 프로세스 스레드
+
+
 ## XSS와 CSRF
+ 
+ 🔹 XSS  
+   **Cross-site Scripting**
+   사이트 간 스크립팅, 웹 페이지에 악성 스크립트를 삽입해 정보를 탈취해가는 공격 방식, 공격대상이 클라이언트  
+   ex) 게시판 등에 공격 스크립트를 삽입하고, 사용자가 공격자 게시물 열람하는 순간 세션이나 쿠키 정보 빼감
+   방안으로는 서버에서 브라우저로 전송 시 문자를 인코딩하는 것이다. 스크립트를 입력하지 못하도록 꺽쇠와 같은 특수문자를 필터링하는 방법
+ 
+ 
+ 🔹 CSRF
+   **Cross-Site Request Forgery**
+   사용자가 의지와 무관하게 공격자가 의도한 행동을 함으로 웹페이지의 보안에 취약하게 하는 것. 공격대상이 서버이다.  
+   방안으로는 난수코드를 이용하여 토큰값을 만들고 세션에 저장된 토큰 값과 요청된 파라미터 토큰의 일치여부를 검사한다.  
+ 
 ## IDS IPS WAF
+
 ## 프록시 서버
+
 ## OAuth
+ 사용자 인증을 위한 개방형 표준 프로토콜이다. 토큰을 발급받아 인증/인가를 수행하는 방식  
+ 신뢰할 수 있는 서버에게 정보를 맡겨놓고 접근할 수 있는 권한을 주는 것.  
+ 구글, 페이스북, 네이버, 카카오로그인 등이 대표적인 인증 방식이다.  
+ 
 ## 암호화 복호화
 
 <br>
@@ -636,16 +657,33 @@ Slack, Dropbox, Google G Suite, Salesforce
 
 🔹 싱글톤 패턴
 
-## tdd
+ - 하나의 앱에 하나의 인스턴스만 생성되게 하는 패턴
+ - new 연산자를 통해서 고정된 메모리 영역을 사용하기 때문에 메모리 낭비 방지  
+ - 이미 생성된 인스턴스를 활용하여 속도 측면에 이점이 있음  
+ 
+ static으로 Stingleton instance; 선언함
+ 생성자는 private로 외부에서 객체 생성을 막고, get메소드를 통하여 instance를 리턴해줌
 
-## rpa
+문제점 : 동시성 문제  
+문제해결방법 : 
+    
+```java
+ private static class LazyHolder() {
+  private static final Singleton instance = new Singleton();
+ }
+ 
+ public static Singleton getInstance() {
+  return LazyHolder.instance;
+ }
+```
+ 
+## tdd
 
 ## 애자일 방법론
 
 - 신속하고 유연하게 개발하는 방법론
 - 클라이언트가 원하는 요구 사항을 빠르게 피드백하며 진행하는 것
 - 업무를 작게 쪼개고 중요도를 정하여 반복을 통한 업그레이드 진행
-
 
 ## 스택과 큐
 
